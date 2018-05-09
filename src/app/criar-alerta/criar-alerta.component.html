@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<h2>Criar Alerta</h2>
 
-	<form>
+	<form (submit)="sendEmail(message)">
 		<div class="row py-3">
 			<div class="col-sm">
 				<div class="form-group">
@@ -141,12 +141,14 @@
 			<div class="col-md-5 order-md-2">
 				<h3>Mensagem:</h3>
 				<h5>Incêndio Urbano</h5>
-				<label for="message">Message</label>
+				<label for="message1">Message1</label>
 				<p> 
 					Incêndio urbano na <u>{{local}}</u>. Para o local foram enviadas <u>{{numeroViaturas}}</u> supervisionadas pelo respetivo graduado da guarnição, <u>{{grauGraduado}}</u> <u>{{nomeGraduado}}</u>, de momento conta-se com <u>{{numeroFeridos}}</u> e <u>{{numeroMortes}}</u>.
 				</p>
 
-				<textarea cols="70%" rows="7" ng-model="message">Incêndio urbano na {{local}}. Para o local foram enviadas {{numeroViaturas}} supervisionadas pelo respetivo graduado da guarnição, {{grauGraduado}} {{nomeGraduado}}, de momento conta-se com {{numeroFeridos}} e {{numeroMortes}}.</textarea>
+				<textarea cols="70%" rows="7" ng-model="message2" id="message2" name="message2">Incêndio urbano na {{local}}. Para o local foram enviadas {{numeroViaturas}} supervisionadas pelo respetivo graduado da guarnição, {{grauGraduado}} {{nomeGraduado}}, de momento conta-se com {{numeroFeridos}} e {{numeroMortes}}.</textarea>
+
+				<textarea ng-model="message" id="message" name="message"></textarea>
     
 			</div>
 
