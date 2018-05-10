@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EmailService, Message} from '../email.service';
 
 @Component({
   selector: 'app-criar-alerta',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarAlertaComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private emailService: EmailService) { }
 
   ngOnInit() {
+  }
+
+  sendEmail(message: Message) {
+    this.emailService.sendEmail(message).subscribe(res => {
+      
+    }, error => {
+      console.log('CriarAlertaComponent Error', error);
+    })
   }
 
 }
