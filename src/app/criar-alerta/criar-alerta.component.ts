@@ -14,9 +14,10 @@ export class CriarAlertaComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+
   sendEmail(message: Message) {
     this.emailService.sendEmail(message).subscribe(res => {
-      
     }, error => {
       console.log('CriarAlertaComponent Error', error);
     })

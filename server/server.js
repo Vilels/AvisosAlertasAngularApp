@@ -1,5 +1,6 @@
 // Iniciar Framework
 const express = require('express');
+var cors = require('cors')
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -11,11 +12,11 @@ app.listen(8000, () => {
   console.log('Server started! on port 8000');
 });
 
-app.use(bodyParser.json());
+app.use(cors());
 
 app.post('/mail', function(req,res){
 
-   nodemailer.createTestAccount((err, account) => {
+   nodemailer.createTestAccount((err, account,) => {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -43,13 +44,13 @@ app.post('/mail', function(req,res){
          	rejectUnauthorized: false
      }
 });*/
-
     // setup email data with unicode symbols
+    var message = req.body;
     let mailOptions = {
         from: 'pedrofilipevilela96@gmail.com', // sender address
         to: 'pedrofilipevilela96@gmail.com', // list of receivers
         subject: 'Hello ✔', // Subject line
-        text: 'Hello world?', // plain text body
+        text: 'some random text', // plain text body
         html: '<b>Hello world?</b>' // html body
     };
 
