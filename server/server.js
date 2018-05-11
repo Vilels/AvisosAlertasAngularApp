@@ -12,9 +12,11 @@ app.listen(8000, () => {
   console.log('Server started! on port 8000');
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
-app.post('/mail', function(req,res){
+app.route('/mail').post((req,res) =>{
 
    nodemailer.createTestAccount((err, account,) => {
     // create reusable transporter object using the default SMTP transport
@@ -50,7 +52,7 @@ app.post('/mail', function(req,res){
         from: 'pedrofilipevilela96@gmail.com', // sender address
         to: 'pedrofilipevilela96@gmail.com', // list of receivers
         subject: 'Hello ✔', // Subject line
-        text: 'some random text', // plain text body
+        text: message.txt, // plain text body
         html: '<b>Hello world?</b>' // html body
     };
 
