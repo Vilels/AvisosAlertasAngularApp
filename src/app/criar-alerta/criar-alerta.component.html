@@ -1,31 +1,179 @@
 <div class="container-fluid">
-	<h2>Criar Alerta</h2>
-
-	<form (submit)="sendEmail(message)">
-		<div class="row py-3">
-			<div class="col-sm">
-				<div class="form-group">
-					<label for="tipologia">Tipologia</label>
-					<select class="form-control" id="tipologia" ng-model="tipologia">
-						<option>Tipologia 1</option>
-						<option>Tipologia 2</option>
-						<option>Emergências e Operações de Proteção e Socorro</option>
-					</select>
-				</div>
-
-			</div>
-			<div class="col-sm">
-				<div class="form-group">
-					<label for="ocorrencia">Ocorrência</label>
-					<select class="form-control" id="ocorrencia" ng-model="ocorrencia">
-						<option>Fenómenos Naturais</option>
-						<option>Incêndios Urbanos ou em Área Urbanizável</option>
-						<option>Incêndios em Transportes</option>
-					</select>
-				</div>
+		<div class="shadow p-3 mb-5 bg-white rounded">
+			<div class="row border-bottom mb-3">
+				<div class="col"><img src="../../assets/PortopontoInstitucional1.png" width="20%" class="pb-3 pl-3"></div>
+	<div class="col"><h2>Criar Alerta</h2></div>
+</div>
+		<div class="row">
+			<div class="col">
+				<h5>Tipo de Programação da Ocorrência:</h5>
 			</div>
 		</div>
 
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="form-check">
+					<input (click)="setProg('n')" class="form-check-input" type="radio" name="programacao" id="nprogramado" value="nao programado" ng-Model>
+					<label class="form-check-label" for="nprogramado">Não Programado</label>
+				</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="form-check">
+						<input (click)="setProg('p')" class="form-check-input" type="radio" name="programacao" id="programado" value="programado">
+							<label class="form-check-label" for="programado">Programado</label>
+					</div>
+				</div>	
+		</div>
+	
+		<!-- <router-outlet></router-outlet> -->
+
+		
+		<div class="row py-3 ">
+			<ng-container *ngIf="prog('n')">
+			<div class="col-sm">
+				  <div class="form-group">
+					  <label for="tipologia">Tipologia Não Programada</label>
+					  <select (change)="setTipologia($event.target.value)" class="form-control" id="tipologia" ng-model="tipologia">
+						  <option value="">----- Tipologia -----</option>
+						  <option value="np1">Emergências e Operações de Proteção e Socorro (NOP 3101/2015 ANPC)</option>
+						  <option value="np2">Impedimento de circulação (provocando corte de via(s) em arruamento(s) ou túneis)</option>
+				<option value="np3">Perturbação de circulação (sem corte de via)</option>
+				  <option value="np4">Zona de Acesso Automóvel Condicionado (ZAAC)</option>
+				  <option value="np5">Atropelamento (sinistralidade rodoviária)</option>
+					  </select>
+				  </div>
+			</div>
+			</ng-container>
+
+			<ng-container *ngIf="prog('p')">
+			<div class="col-sm">
+					<div class="form-group">
+					  <label for="tipologia">Tipologia Programada</label>
+					  <select (change)="setTipologia($event.target.value)" class="form-control" id="tipologia" ng-model="tipologia">
+							<option value="">----- Tipologia -----</option>
+						<option value="p1">Operações e Estados de Alerta</option>
+						<option value="p2">Impedimento ou perturbação de circulação (com corte de via)</option>
+						<option value="p3">Estado do Trânsito</option>
+					  </select>
+					</div>
+				  </div>
+				</ng-container>
+				
+				
+			<ng-container *ngIf="tipologia('np1')">
+			<div class="col-sm">
+				<div class="form-group">
+				  <label for="ocorrencia">Ocorrência</label>
+				  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+					<option>----- Ocorrencia -----</option>
+					<option value="f2">Fenómenos Naturais</option>
+					<option value="f1">Incêndios Urbanos ou em Área Urbanizável</option>
+					<option value="f2">Incêndios em Transportes</option>
+					<option value="f2">Acidentes, incluindo industriais e tecnológicos</option>
+					<option value="f2">Comprometimento total ou parcial de segurança, serviços ou estruturas</option>
+					<option value="f2">Intervenção em conflitos legais</option>
+					<option value="f2">Assistência e prevenção de atividades humanas</option>
+					<option value="f2">Outro tipo de ocorrencia</option>
+				  </select>
+				</div>
+			  </div>
+			</ng-container>
+
+			<ng-container *ngIf="tipologia('np2')">
+					<div class="col-sm">
+						<div class="form-group">
+						  <label for="ocorrencia">Ocorrência</label>
+						  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+								<option>----- Ocorrencia -----</option>
+							<option value="f2">Ações/intervenções preventivas de segurança de serviços camarários ou outras entidades na via pública</option>
+							<option value="f2">Acidente/sinistro rodoviário</option>
+							<option value="f2">Entidade policial promove corte temporário de via e/ou desvio de trânsito não planeado</option>
+						  </select>
+						</div>
+					  </div>
+					</ng-container>
+
+			<ng-container *ngIf="tipologia('np3')">
+					<div class="col-sm">
+						<div class="form-group">
+						  <label for="ocorrencia">Ocorrência</label>
+						  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+							<option>----- Ocorrencia -----</option>
+							<option value="f2">Ações/intervenções preventivas de segurança de serviços camarários ou outras entidades na via pública</option>
+							<option value="f2">Avaria generalizada de sistema centralizado de gestão de tráfego e/ou controladores de tráfego</option>
+							<option value="f2">Avaria local de sinalização luminosa em ponto estratégico</option>
+						  </select>
+						</div>
+					  </div>
+					</ng-container>
+
+					<ng-container *ngIf="tipologia('np4')">
+							<div class="col-sm">
+								<div class="form-group">
+								  <label for="ocorrencia">Ocorrência</label>
+								  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+										<option>----- Ocorrencia -----</option>
+									<option value="f2">Avaria generalizada de sistema centralizado de gestão de acessos e/ou dissuasores automáticos e/ou voz e/ou imagem</option>
+								  </select>
+								</div>
+							  </div>
+							</ng-container>
+
+							<ng-container *ngIf="tipologia('np5')">
+									<div class="col-sm">
+										<div class="form-group">
+										  <label for="ocorrencia">Ocorrência</label>
+										  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+												<option>----- Ocorrencia -----</option>
+											<option value="f2">Atropelamento de peão na via pública ou na passadeira</option>
+										  </select>
+										</div>
+									  </div>
+									</ng-container>
+
+									<ng-container *ngIf="tipologia('p1')">
+											<div class="col-sm">
+												<div class="form-group">
+												  <label for="ocorrencia">Ocorrência</label>
+												  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+														<option>----- Ocorrencia -----</option>
+														<option value="f2">Dos serviços da Câmara Municipal do Porto</option>
+														<option value="f2">Exercício ou Simulacro</option>
+												  </select>
+												</div>
+											  </div>
+											</ng-container>
+
+											<ng-container *ngIf="tipologia('p2')">
+													<div class="col-sm">
+														<div class="form-group">
+														  <label for="ocorrencia">Ocorrência</label>
+														  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+																<option>----- Ocorrencia -----</option>
+																<option value="f2">Grandes eventos, planos de mobilidade, ou manifestações</option>
+																<option value="f2">Ações/intervenções de serviços camarários ou outras entidades na via pública</option>
+														  </select>
+														</div>
+													  </div>
+													</ng-container>
+
+													<ng-container *ngIf="tipologia('p3')">
+															<div class="col-sm">
+																<div class="form-group">
+																  <label for="ocorrencia">Ocorrência</label>
+																  <select (change)="setOcorrencia($event.target.value)" class="form-control" id="ocorrencia" ng-model="ocorrencia">
+																		<option>----- Ocorrencia -----</option>
+																		<option value="f2">Estado do trânsito em pontos nevrálgicos da cidade, em horas críticas</option>
+																  </select>
+																</div>
+															  </div>
+															</ng-container>
+		  </div>
+		  </div>
+
+		<ng-container *ngIf="ocorrencia('f1')">
+		<form (submit)="sendNotification('Incendio Urbano', messageBody.value)">
 		<div class="row">
 			<div class="col-md-7 order-md-1">
 				<div class="row">
@@ -45,14 +193,14 @@
 				</div>
 
 				<div class="row">
-					<div class="col">
+					<!-- <div class="col">
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="classeGraduado" id="classeGraduado1" value="General" [(ngModel)]="grauGraduado" name="grauGraduado">
 							<label class="form-check-label" for="classeGraduado1">
 								General
 							</label>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="col">
 						<div class="form-check">
@@ -91,7 +239,7 @@
 					<div class="form-group col-lg pt-lg-4">
 						<label>Número de Feridos</label>
 						<select class="custom-select" id="numeroFeridos" [(ngModel)]="numeroFeridos" name="numeroFeridos">
-							<option value="">0</option>
+							<option value="0 feridos">0</option>
 							<option value="1 feridos">1</option>
 							<option value="2 feridos">2</option>
 							<option value="3 feridos">3</option>
@@ -109,7 +257,7 @@
 					<div class="form-group col-lg pt-lg-4">
 						<label>Número de Mortes</label>
 						<select class="custom-select" id="numeroMortes" [(ngModel)]="numeroMortes" name="numeroMortes">
-							<option value="">0</option>
+							<option value="0 mortes">0</option>
 							<option value="1 morte">1</option>
 							<option value="2 mortes">2</option>
 							<option value="3 mortes">3</option>
@@ -125,7 +273,7 @@
 					</div>
 				</div>
 
-				<div class="row justify-content-md-center mt-md-5">
+				<div class="row justify-content-md-center mt-md-4 pb-3">
 					<div class="col-md-4 col-sm-6">
 						<button type="button" class="btn btn-secondary">Limpar Campos</button>
 					</div>
@@ -140,19 +288,24 @@
 
 			<div class="col-md-5 order-md-2">
 				<h3>Mensagem:</h3>
-				<h5>Incêndio Urbano</h5>
-				<label for="message1">Message1</label>
-				<p> 
+				<h5>Assunto: Incêndio Urbano</h5>
+				<!-- <label for="message1">Message1</label> -->
+				<!-- <p> 
 					Incêndio urbano na <u>{{local}}</u>. Para o local foram enviadas <u>{{numeroViaturas}}</u> supervisionadas pelo respetivo graduado da guarnição, <u>{{grauGraduado}}</u> <u>{{nomeGraduado}}</u>, de momento conta-se com <u>{{numeroFeridos}}</u> e <u>{{numeroMortes}}</u>.
-				</p>
+				</p> -->
 
-				<textarea cols="70%" rows="7" ng-model="message2" id="message2" name="message2">Incêndio urbano na {{local}}. Para o local foram enviadas {{numeroViaturas}} supervisionadas pelo respetivo graduado da guarnição, {{grauGraduado}} {{nomeGraduado}}, de momento conta-se com {{numeroFeridos}} e {{numeroMortes}}.</textarea>
+				<textarea cols="50" rows="7" ng-model="message2" id="message2" name="message2" #messageBody >Incêndio urbano na {{local}}. Para o local foram enviadas {{numeroViaturas}} supervisionadas pelo respetivo graduado da guarnição, {{grauGraduado}} {{nomeGraduado}}, de momento conta-se com {{numeroFeridos}} e {{numeroMortes}}.</textarea>
 
-				<textarea></textarea>
+				<!-- <textarea name="mensagemparaenvio" ng-model="mensagemparaenvio"></textarea> -->
     
 			</div>
 
 		</div>
 	</form>
+</ng-container>
+
+<ng-container *ngIf="ocorrencia('f2')">
+	<h1>Formulário em construção</h1>
+</ng-container>
 	
 </div>

@@ -10,9 +10,12 @@
   "author": "vilels",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "nodemailer": "^4.6.4"
+    "firebase-admin": "^5.12.1",
+    "nodemailer": "^4.6.4",
+    "oauth2": "0.0.1",
+    "xoauth2": "^1.2.0"
   }
 }
