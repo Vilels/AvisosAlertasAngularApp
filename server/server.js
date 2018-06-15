@@ -5,6 +5,8 @@ var cors = require('cors');
 const app = express();
 const nodemailer = require('nodemailer');
 const OAuth2 = require('OAuth2');
+const isValid = require("./isValid");
+const logger = require("./logger");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -32,6 +34,17 @@ app.listen(8000, () => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
+
+app.all("*", (req, res, next) => {
+    logger.info("Incoming request", {method: req.method});
+
+    logger.debug("Incoming request verbose", {
+        headers: req.headers,
+        query:req.query,
+        body: req.body
+    });
+    return next();
+});
 
 app.route('/test').get((req, res)=>{
     console.log("TEST COM SUCESSO!");
@@ -111,6 +124,7 @@ app.route('/request').post((req, res)=>{
 
 //ENDPOINT NOTIFICATION + EMAIL
 app.route('/alert').post((req, res)=>{
+    logger.info("/ query", {query: req.query});
     var reqTitle = req.body.title;
     var reqBody = req.body.body;
     //notificationg message data
@@ -133,7 +147,7 @@ app.route('/alert').post((req, res)=>{
             clientId: '40455889206-7o58s3rsa3bdd4juspo826uttp309i0f.apps.googleusercontent.com',
             clientSecret: 'pccv2sqEG-moIXYlQcFkdSVp',
             refreshToken: '1/iWkLh5-zzPtcMgOnc-rPOQYU0E5JMF4LZbF87YYm8f4',
-            accessToken: 'ya29.GlzaBeWoA_9CKQPGFlMB6MPLirGpBfyMMzZ3wtO5Zatkdpe6XyKWCBN4HAHozXeYxY4k3A-ck6AQsfuZtwnvAreAD3xs8zRgXxW7lyIW39kdv97wBcyhUrGJtUkUzA',
+            accessToken: 'ya29.GlzbBSuX9ybF4It6KQwokygAHXKPTHeEZbdZ0A02NpeCr7q7pL9PNLKza0jxKA5EoOOycb5WNs4NC5VohDd99BBq2n0x5aHnSlVmgLFjLILAJQQzdjxXGkDjgw9fDw',
           },
     });
     //conteudo do email
@@ -163,6 +177,7 @@ app.route('/alert').post((req, res)=>{
         }
     })
 
+    logger.info("/ response", reqBody);
     //Resposta do endpoint
-    res.send("Conteudo Enviado Com Sucesso");
+    res.send("Conteudo Enviado Com Sucesso:" + reqBody);
 });

@@ -1,0 +1,13 @@
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:13:40.861Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:13:40.862Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"/ response Incêndio urbano na LOCAL. Para o local foram enviadas 7 viaturas supervisionadas pelo respetivo graduado da guarnição, Chefe GRADUADO, de momento conta-se com mais de 10 feridos e mais de 10 mortes.","time":"2018-06-15T10:13:40.864Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:16:55.588Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:16:55.590Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na . Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:16:55.609Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'GET' }","time":"2018-06-15T10:17:59.459Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:29:45.206Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:29:45.206Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na TESTE 11:29. Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:29:45.206Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:32:21.595Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:32:21.596Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na TESTE 11:32. Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:32:21.598Z","v":0}
