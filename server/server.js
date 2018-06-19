@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 var admin = require("firebase-admin");
 
 var tokenFCM = "fyHcK7C4DwE:APA91bFLdFZVGYtWFtD_qvAYUZ22wFCYwqDDab5blSZThZwVsk8ocyfELdPtrDMzvys4ghbsCy6EDEGmwUy_yfYZJfb5JFOSMtO7L2OT6BwiLtpYuf90lptMmD0QhrrC_EC0ax33e1LU";
+var emailsEnvio ="pedrofilipevilela96@gmail.com";
+var numerosSMS ="914182333";
+
 
 admin.initializeApp({
   credential: admin.credential.cert({
@@ -36,8 +39,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 app.all("*", (req, res, next) => {
-    logger.info("Incoming request", {method: req.method});
-
+    logger.info("---NEW REQUEST---", {method: req.method}, req.body);
+    
     logger.debug("Incoming request verbose", {
         headers: req.headers,
         query:req.query,
@@ -124,7 +127,8 @@ app.route('/request').post((req, res)=>{
 
 //ENDPOINT NOTIFICATION + EMAIL
 app.route('/alert').post((req, res)=>{
-    logger.info("/ query", {query: req.query});
+    var fimNotificacao = false;
+    //logger.info("/ query", {query: req.query});
     var reqTitle = req.body.title;
     var reqBody = req.body.body;
     //notificationg message data
@@ -147,13 +151,13 @@ app.route('/alert').post((req, res)=>{
             clientId: '40455889206-7o58s3rsa3bdd4juspo826uttp309i0f.apps.googleusercontent.com',
             clientSecret: 'pccv2sqEG-moIXYlQcFkdSVp',
             refreshToken: '1/iWkLh5-zzPtcMgOnc-rPOQYU0E5JMF4LZbF87YYm8f4',
-            accessToken: 'ya29.GlzbBSuX9ybF4It6KQwokygAHXKPTHeEZbdZ0A02NpeCr7q7pL9PNLKza0jxKA5EoOOycb5WNs4NC5VohDd99BBq2n0x5aHnSlVmgLFjLILAJQQzdjxXGkDjgw9fDw',
+            accessToken: 'ya29.GlzeBW0HCR4XasGueU0KQ0xXQsq4pEEHKJN0S7YSqKsLA8ipxjRJvhGGFfFqM4koQAOPDynNJwnBCDTmNGxqkBzspaINc-eHLGRMaPFyQZ2xj9NbtiTmCrBxn3qoWw',
           },
     });
     //conteudo do email
     var mailOptions = {
-        from: 'CGI',
-        to: 'pedrofilipevilela96@gmail.com',
+        from: '"CGI" <vilels4dev@gmail.com>',
+        to: emailsEnvio,
         subject: reqTitle,
         text: reqBody
     }
@@ -163,21 +167,29 @@ app.route('/alert').post((req, res)=>{
     .then((response) => {
         // Response is a message ID string.
         console.log('Successfully sent notification:', response);
+        logger.info("Notificações entregues com sucesso.", /* {tokens: tokenFCM} */);
+        fimNotificacao = true;
     })
     .catch((error) => {
         console.log('Error sending notification:', error);
+        logger.info("Erro ao enviar notificações");
+        fimNotificacao = true;
     });
 
     //Envio do email
     transporter.sendMail(mailOptions, function(err, res){
         if (err){
             console.log(err);
+            logger.info("Erro ao enviar emails");
+            fimEmail = true;
         } else {
             console.log('Email Sent');
+            logger.info("Emails enviados com sucesso.", {emails: mailOptions.to});
+            fimEmail = true;
         }
     })
 
-    logger.info("/ response", reqBody);
+    logger.info("---FIM---");
     //Resposta do endpoint
-    res.send("Conteudo Enviado Com Sucesso:" + reqBody);
+    res.send("Conteudo Enviado Com Sucesso!");
 });

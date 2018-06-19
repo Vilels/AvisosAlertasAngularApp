@@ -1,13 +1,16 @@
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:13:40.861Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:13:40.862Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":2640,"level":30,"msg":"/ response Incêndio urbano na LOCAL. Para o local foram enviadas 7 viaturas supervisionadas pelo respetivo graduado da guarnição, Chefe GRADUADO, de momento conta-se com mais de 10 feridos e mais de 10 mortes.","time":"2018-06-15T10:13:40.864Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:16:55.588Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:16:55.590Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na . Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:16:55.609Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'GET' }","time":"2018-06-15T10:17:59.459Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:29:45.206Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:29:45.206Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na TESTE 11:29. Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:29:45.206Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"Incoming request { method: 'POST' }","time":"2018-06-15T10:32:21.595Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ query { query: {} }","time":"2018-06-15T10:32:21.596Z","v":0}
-{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":8812,"level":30,"msg":"/ response Incêndio urbano na TESTE 11:32. Para o local foram enviadas  supervisionadas pelo respetivo graduado da guarnição,  , de momento conta-se com  e .","time":"2018-06-15T10:32:21.598Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---NEW REQUEST--- { method: 'POST' } { title: 'Incendio Urbano', body: 'TESTE 01 =?!|_:ªASDÂSDÇ»' }","time":"2018-06-18T15:43:46.536Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---FIM---","time":"2018-06-18T15:43:46.539Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Notificações entregues com sucesso.","time":"2018-06-18T15:43:46.678Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Emails enviados com sucesso. { emails: 'pedrofilipevilela96@gmail.com' }","time":"2018-06-18T15:43:48.276Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---NEW REQUEST--- { method: 'POST' } { title: 'Incendio Urbano', body: 'TESTE 01 =?!|_:ªASDÂSDÇ»' }","time":"2018-06-18T15:44:10.309Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---FIM---","time":"2018-06-18T15:44:10.312Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Notificações entregues com sucesso.","time":"2018-06-18T15:44:10.431Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Emails enviados com sucesso. { emails: 'pedrofilipevilela96@gmail.com' }","time":"2018-06-18T15:44:11.986Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---NEW REQUEST--- { method: 'POST' } { title: 'Incendio Urbano', body: 'TESTE 01 =?!|_:ªASDÂSDÇ»' }","time":"2018-06-18T15:44:33.692Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---FIM---","time":"2018-06-18T15:44:33.694Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Notificações entregues com sucesso.","time":"2018-06-18T15:44:33.806Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Emails enviados com sucesso. { emails: 'pedrofilipevilela96@gmail.com' }","time":"2018-06-18T15:44:35.278Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---NEW REQUEST--- { method: 'POST' } { title: 'Incendio Urbano', body: 'OLAOLAOLA' }","time":"2018-06-18T15:44:52.662Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"---FIM---","time":"2018-06-18T15:44:52.663Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Notificações entregues com sucesso.","time":"2018-06-18T15:44:52.816Z","v":0}
+{"name":"myapp","hostname":"DESKTOP-HTROR6C","pid":9520,"level":30,"msg":"Emails enviados com sucesso. { emails: 'pedrofilipevilela96@gmail.com' }","time":"2018-06-18T15:44:54.518Z","v":0}
